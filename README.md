@@ -9,7 +9,7 @@ The goals / steps of this project are the following:
 
 ## Rubric Points
 
-####1. Submission includes all required files and can be used to run the simulator in autonomous mode
+#### 1. Submission includes all required files and can be used to run the simulator in autonomous mode
 
 My project includes the following files:
 * model.py containing the script to create and train the model
@@ -18,18 +18,18 @@ My project includes the following files:
 * writeup_report.md or writeup_report.pdf summarizing the results
 * I have added a video of myrun (shahzrun) and it is also posted on youtube (https://youtu.be/gPbXwaDHjIU)
 
-####2. Submssion includes functional code
+#### 2. Submssion includes functional code
 Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
 
 python drive.py model.h5
 
-####3. Submssion code is usable and readable
+#### 3. Submssion code is usable and readable
 
 The model.py file contains the code for training and saving the convolution neural network. The file shows the pipeline I used for training and validating the model, and it contains comments to explain how the code works.
 
-##Model Architecture and Training Strategy
+## Model Architecture and Training Strategy
 
-####1. An appropriate model arcthiecture has been employed
+#### 1. An appropriate model arcthiecture has been employed
 
 Below is a summary of my model. It consists of a convolution neural network with 3x3 filter sizes and depths of 2X32, 2X64 and 2X128. It includes MaxPooling and Dropouts. The fully connected layers are added after the flattening layer.
 
@@ -112,23 +112,23 @@ Epoch 10/10
 16000/16000 [==============================] - 35s - loss: 0.0119 - val_loss: 0.0110
 
 
-####2. Attempts to reduce overfitting in the model
+#### 2. Attempts to reduce overfitting in the model
 
 The model contains dropout layers in order to reduce overfitting. 
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
-####3. Model parameter tuning
+#### 3. Model parameter tuning
 
 The model used an adam optimizer, so the learning rate was not tuned manually.
 
-####4. Appropriate training data
+#### 4. Appropriate training data
 
 Training data was chosen to keep the vehicle driving on the road. I used the data provided by udacity. I used a combination of center lane driving, recovering from the left and right sides of the road. I adjusted the driving angles for the left and right side images. I also flipped the images to increase the size of training set.
 
-##Model Architecture and Training Strategy
+## Model Architecture and Training Strategy
 
-####1. Solution Design Approach
+#### 1. Solution Design Approach
 
 The overall strategy for deriving a model architecture based on the Nvidia model and literature search (http://cs231n.github.io/convolutional-networks/, for example). I choose this approach becasue the model has been publiched and has proven results.
 
@@ -140,13 +140,13 @@ The final step was to run the simulator to see how well the car was driving arou
 
 At the end of the process, the vehicle is able to drive autonomously around the track without leaving the road.
 
-####2. Final Model Architecture
+#### 2. Final Model Architecture
 
 The final model architecture is summarized above using the model.summary() function.
 
 I have not included a visualization of the architecture (note: visualizing the architecture is optional according to the project rubric), but it looks very much like the covnet described in literature ((http://cs231n.github.io/convolutional-networks/).
 
-####3. Creation of the Training Set & Training Process
+#### 3. Creation of the Training Set & Training Process
 
 I used the training data provided by udacity. I did split the training data into training and validation data.
 
