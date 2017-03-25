@@ -35,8 +35,8 @@ Below is a summary of my model. It consists of a convolution neural network with
 
 The model includes ELU layers to introduce nonlinearity, and the data is normalized and re-sized in preprocessing. 
 
-___________________________________________________________________________________________________
-Layer (type)                     Output Shape          Param #     Connected to                     
+____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Numb of Parms     Connected to               
 ====================================================================================================
 convolution2d_1 (Convolution2D)  (None, 40, 160, 3)    12          convolution2d_input_1[0][0]      
 ____________________________________________________________________________________________________
