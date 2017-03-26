@@ -36,7 +36,7 @@ Below is a summary of my model. It consists of a convolution neural network with
 The model includes ELU layers to introduce nonlinearity, and the data is normalized and re-sized in preprocessing.
 
 ____________________________________________________________________________________________________
-Layer, (type), (Output Shape), Num, Connected-to                     
+Layer (type),                    (Output Shape),       Num,        Connected-to                     
 ____________________________________________________________________________________________________
 convolution2d_1 (Convolution2D)  (None, 40, 160, 3)    12          convolution2d_input_1[0][0]      
 ____________________________________________________________________________________________________
@@ -83,14 +83,17 @@ ________________________________________________________________________________
 Epoch 1/10
 
 tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+
 tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties:
 name: GRID K520
 major: 3 minor: 0 memoryClockRate (GHz) 0.797
 pciBusID 0000:00:03.0
 Total memory: 3.94GiB
 Free memory: 3.91GiB
+
 tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0
 tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y
+
 tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
 
 16000/16000 [==============================] - 38s - loss: 0.0254 - val_loss: 0.0134
@@ -125,8 +128,7 @@ Epoch 8/10
 
 Epoch 9/10
 
-16000/16000
-[==============================] - 35s - loss: 0.0118 - val_loss: 0.0104
+16000/16000 [==============================] - 35s - loss: 0.0118 - val_loss: 0.0104
 
 Epoch 10/10
 
