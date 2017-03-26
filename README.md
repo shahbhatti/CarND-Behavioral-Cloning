@@ -14,12 +14,12 @@ The goals / steps of this project are the following:
 My project includes the following files:
 * model.py containing the script to create and train the model
 * drive.py for driving the car in autonomous mode
-* model.h5 containing a trained convolution neural network 
+* model.h5 containing a trained convolution neural network
 * writeup_report.md or writeup_report.pdf summarizing the results
 * I have added a video of myrun (shahzrun) and it is also posted on youtube (https://youtu.be/gPbXwaDHjIU)
 
 #### 2. Submssion includes functional code
-Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing 
+Using the Udacity provided simulator and my drive.py file, the car can be driven autonomously around the track by executing
 
 python drive.py model.h5
 
@@ -33,10 +33,10 @@ The model.py file contains the code for training and saving the convolution neur
 
 Below is a summary of my model. It consists of a convolution neural network with 3x3 filter sizes and depths of 2X32, 2X64 and 2X128. It includes MaxPooling and Dropouts. The fully connected layers are added after the flattening layer.
 
-The model includes ELU layers to introduce nonlinearity, and the data is normalized and re-sized in preprocessing. 
+The model includes ELU layers to introduce nonlinearity, and the data is normalized and re-sized in preprocessing.
 
 ____________________________________________________________________________________________________
-Layer (type)                     Output Shape          Num         Connected to                     
+Layer, (type), (Output Shape), Num, Connected-to                     
 ____________________________________________________________________________________________________
 convolution2d_1 (Convolution2D)  (None, 40, 160, 3)    12          convolution2d_input_1[0][0]      
 ____________________________________________________________________________________________________
@@ -81,40 +81,61 @@ Trainable params: 1,665,997
 Non-trainable params: 0
 ____________________________________________________________________________________________________
 Epoch 1/10
-I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
-I tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties: 
+
+tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:937] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+tensorflow/core/common_runtime/gpu/gpu_device.cc:885] Found device 0 with properties:
 name: GRID K520
 major: 3 minor: 0 memoryClockRate (GHz) 0.797
 pciBusID 0000:00:03.0
 Total memory: 3.94GiB
 Free memory: 3.91GiB
-I tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0 
-I tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y 
-I tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+tensorflow/core/common_runtime/gpu/gpu_device.cc:906] DMA: 0
+tensorflow/core/common_runtime/gpu/gpu_device.cc:916] 0:   Y
+tensorflow/core/common_runtime/gpu/gpu_device.cc:975] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GRID K520, pci bus id: 0000:00:03.0)
+
 16000/16000 [==============================] - 38s - loss: 0.0254 - val_loss: 0.0134
+
 Epoch 2/10
+
 16000/16000 [==============================] - 35s - loss: 0.0151 - val_loss: 0.0111
+
 Epoch 3/10
+
 16000/16000 [==============================] - 35s - loss: 0.0132 - val_loss: 0.0118
+
 Epoch 4/10
+
 16000/16000 [==============================] - 36s - loss: 0.0129 - val_loss: 0.0124
+
 Epoch 5/10
+
 16000/16000 [==============================] - 36s - loss: 0.0125 - val_loss: 0.0113
+
 Epoch 6/10
+
 16000/16000 [==============================] - 36s - loss: 0.0122 - val_loss: 0.0121
+
 Epoch 7/10
+
 16000/16000 [==============================] - 35s - loss: 0.0118 - val_loss: 0.0119
+
 Epoch 8/10
+
 16000/16000 [==============================] - 35s - loss: 0.0128 - val_loss: 0.0117
+
 Epoch 9/10
-16000/16000 [==============================] - 35s - loss: 0.0118 - val_loss: 0.0104
+
+16000/16000
+[==============================] - 35s - loss: 0.0118 - val_loss: 0.0104
+
 Epoch 10/10
+
 16000/16000 [==============================] - 35s - loss: 0.0119 - val_loss: 0.0110
 
 
 #### 2. Attempts to reduce overfitting in the model
 
-The model contains dropout layers in order to reduce overfitting. 
+The model contains dropout layers in order to reduce overfitting.
 
 The model was trained and validated on different data sets to ensure that the model was not overfitting. The model was tested by running it through the simulator and ensuring that the vehicle could stay on the track.
 
@@ -150,6 +171,6 @@ I have not included a visualization of the architecture (note: visualizing the a
 
 I used the training data provided by udacity. I did split the training data into training and validation data.
 
-I finally randomly shuffled the data set and put 10% of the data into a validation set. 
+I finally randomly shuffled the data set and put 10% of the data into a validation set.
 
 I used this training data for training the model. The validation set helped determine if the model was over or under fitting. The ideal number of epochs was 10 as evidenced by the loss, that is, it stopped reducing the loss. I used an adam optimizer so that manually training the learning rate wasn't necessary.
